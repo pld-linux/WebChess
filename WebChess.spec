@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/webchess/%{name}_%{version}.zip
 # Source0-md5:	e1a0dc90959a4e8475854a6e7fb4f0b9
 Source1:	%{name}.conf
 URL:		http://webchess.sourceforge.net/
+BuildRequires:	unzip
 Requires:	php
 Requires:	php-mysql
 Requires:	php-pcre
