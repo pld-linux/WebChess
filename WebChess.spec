@@ -37,7 +37,7 @@ Ma tak¿e system logowania, który pozwala na wiele jednoczesnych gier.
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_webchessdir} \
-	   $RPM_BUILD_ROOT{%{_sysconfdir},/etc/httpd}
+	$RPM_BUILD_ROOT{%{_sysconfdir},/etc/httpd}
 
 cp -af images javascript *.php *.css chess.inc $RPM_BUILD_ROOT%{_webchessdir}
 rm -f $RPM_BUILD_ROOT%{_webchessdir}/config.php
