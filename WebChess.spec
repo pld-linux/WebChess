@@ -3,12 +3,13 @@ Summary(pl):	Wspania³a internetowa gra w szachy
 Name:		WebChess
 Version:	0.9.0
 Release:	1
-License:	GNU General Public License (GPL)
+License:	GPL
 Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/webchess/%{name}_%{version}.zip
 # Source0-md5:	e1a0dc90959a4e8475854a6e7fb4f0b9
 Source1:	%{name}.conf
-URL:		http://webchess.sourceforge.net
+URL:		http://webchess.sourceforge.net/
+Requires:	php
 Requires:	php-mysql
 Requires:	php-pcre
 Requires:	webserver
@@ -25,12 +26,13 @@ CHECK checking, pawn promotion and undo. It also has a login system
 which allows multiple simultaneous games.
 
 %description -l pl
-Wspania³a internetowa gra w szachy, oparta na PHP/MySQL i
-HTML/JavaScript. Posiada wiele ciekawych funkcji oraz system
-logowania, który zapewnia gre zespo³ow±
+Wspania³a internetowa gra w szachy, u¿ywaj±ca PHP/MySQL po stronie
+backendu i HTML/JavaScript po stronie interfejsu u¿ytkownika. Zawiera
+kontrolê ruchów, sprawdzanie szachu, promocjê pionów oraz cofanie.
+Ma tak¿e system logowania, który pozwala na wiele jednoczesnych gier.
 
 %prep
-%setup -q -c %{name}-%{version}
+%setup -q -c
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -80,8 +82,8 @@ fi
 %config(noreplace) %verify(not size mtime md5) /etc/httpd/%{name}.conf
 %doc docs/*
 %dir %{_webchessdir}
-%{_webchessdir}/images/
-%{_webchessdir}/javascript/
+%{_webchessdir}/images
+%{_webchessdir}/javascript
 %{_webchessdir}/chess.inc
 %{_webchessdir}/*.php
 %{_webchessdir}/*.css
