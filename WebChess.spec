@@ -29,8 +29,8 @@ which allows multiple simultaneous games.
 %description -l pl
 Wspania³a internetowa gra w szachy, u¿ywaj±ca PHP/MySQL po stronie
 backendu i HTML/JavaScript po stronie interfejsu u¿ytkownika. Zawiera
-kontrolê ruchów, sprawdzanie szachu, promocjê pionów oraz cofanie.
-Ma tak¿e system logowania, który pozwala na wiele jednoczesnych gier.
+kontrolê ruchów, sprawdzanie szachu, promocjê pionów oraz cofanie. Ma
+tak¿e system logowania, który pozwala na wiele jednoczesnych gier.
 
 %prep
 %setup -q -c
@@ -79,8 +79,8 @@ fi
 %files
 %defattr(644,root,root,755)
 %dir %{_sysconfdir}
-%attr(640,root,http) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/*
-%config(noreplace) %verify(not size mtime md5) /etc/httpd/%{name}.conf
+%attr(640,root,http) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*
+%config(noreplace) %verify(not md5 mtime size) /etc/httpd/%{name}.conf
 %doc docs/*
 %dir %{_webchessdir}
 %{_webchessdir}/images
