@@ -14,6 +14,7 @@ Requires:	php
 Requires:	php-mysql
 Requires:	php-pcre
 Requires:	webserver
+BuildRequires:	rpmbuild(macros) >= 1.268
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,9 +58,7 @@ if [ -f /etc/httpd/httpd.conf ] && ! grep -q "^Include.*%{name}.conf" /etc/httpd
 elif [ -d /etc/httpd/httpd.conf ]; then
 	ln -sf /etc/httpd/%{name}.conf /etc/httpd/httpd.conf/99_%{name}.conf
 fi
-if [ -f /var/lock/subsys/httpd ]; then
-	/usr/sbin/apachectl restart 1>&2
-fi
+%service -q httpd reload
 
 %preun
 if [ "$1" = "0" ]; then
@@ -70,9 +69,7 @@ if [ "$1" = "0" ]; then
 		grep -v "^Include.*%{name}.conf" /etc/httpd/httpd.conf > \
 			/etc/httpd/httpd.conf.tmp
 		mv -f /etc/httpd/httpd.conf.tmp /etc/httpd/httpd.conf
-		if [ -f /var/lock/subsys/httpd ]; then
-			/usr/sbin/apachectl restart 1>&2
-		fi
+		%service -q httpd reload
 	fi
 fi
 
