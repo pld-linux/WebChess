@@ -1,5 +1,5 @@
 Summary:	A great persistant online chess game
-Summary(pl):	Wspania³a internetowa gra w szachy
+Summary(pl.UTF-8):   WspaniaÅ‚a internetowa gra w szachy
 Name:		WebChess
 Version:	0.9.0
 Release:	2
@@ -27,11 +27,11 @@ and HTML/JavaScript on the front-end, which includes move validation,
 CHECK checking, pawn promotion and undo. It also has a login system
 which allows multiple simultaneous games.
 
-%description -l pl
-Wspania³a internetowa gra w szachy, u¿ywaj±ca PHP/MySQL po stronie
-backendu i HTML/JavaScript po stronie interfejsu u¿ytkownika. Zawiera
-kontrolê ruchów, sprawdzanie szachu, promocjê pionów oraz cofanie. Ma
-tak¿e system logowania, który pozwala na wiele jednoczesnych gier.
+%description -l pl.UTF-8
+WspaniaÅ‚a internetowa gra w szachy, uÅ¼ywajÄ…ca PHP/MySQL po stronie
+backendu i HTML/JavaScript po stronie interfejsu uÅ¼ytkownika. Zawiera
+kontrolÄ™ ruchÃ³w, sprawdzanie szachu, promocjÄ™ pionÃ³w oraz cofanie. Ma
+takÅ¼e system logowania, ktÃ³ry pozwala na wiele jednoczesnych gier.
 
 %prep
 %setup -q -c
