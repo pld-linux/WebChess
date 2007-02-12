@@ -1,5 +1,5 @@
 Summary:	A great persistant online chess game
-Summary(pl.UTF-8):   Wspaniała internetowa gra w szachy
+Summary(pl.UTF-8):	Wspaniała internetowa gra w szachy
 Name:		WebChess
 Version:	0.9.0
 Release:	2
